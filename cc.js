@@ -35,6 +35,12 @@ btn.addEventListener("click",(evt) => {
     evt.preventDefault();
     GetExchangeRate();
 })
+fromcurrElement.addEventListener("change",() => {
+    toamount.value = " ";
+})
+tocurrElement.addEventListener("change",() => {
+    toamount.value = " ";
+})
 window.addEventListener("load",()=>{
     GetExchangeRate();
 });
