@@ -53,7 +53,7 @@ const GetExchangeRate = async() =>{
         let res = await fetch(`https://api.exchangerate-api.com/v4/latest/${fromcurr}`);
         let data = await res.json();
         let convertedrate = data.rates[tocurr];
-        let conversionamount = (amount*convertedrate);
+        let conversionamount = amount*convertedrate;
         toamount.value = conversionamount;
     }
     catch{
