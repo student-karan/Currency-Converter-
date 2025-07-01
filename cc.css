@@ -10,7 +10,8 @@ body{
     min-height: 100vh;
 }
 header{
-    height: 10vh;
+    padding-bottom: 2rem;
+    text-decoration: underline;
     text-align: center;
     font-size: 2rem;
     font-style: oblique;
@@ -66,7 +67,7 @@ form img{
 form input{
     background-color: #fff0d1;
     font-size: 1.5rem;
-    margin-top: 5vh;
+    margin-top: 3vh;
 }
 form i{
     margin-top: 17vh;
@@ -76,8 +77,8 @@ form button{
     background-color: rgb(190, 129, 48);
     height: 3rem;
     width: 15rem;
-    margin-top: 10vh;
-    margin-left: 2.5rem;
+    margin-top: 25px;
+    margin-left: 2.5rem; 
     border: 3px solid black;
     border-radius: 10px;
     font-weight: 500;

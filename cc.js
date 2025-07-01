@@ -1,6 +1,6 @@
 let URL = `https://api.exchangerate-api.com/v4/latest`;
 
-let btn = document.querySelector("form button");
+// let btn = document.querySelector("form button");
 let fromcurrElement = document.querySelector(".from select");
 let fromamount = document.querySelector(".from input");
 let tocurrElement = document.querySelector(".to select");
@@ -18,12 +18,15 @@ for (currCode in countryList) {
     }
     fromcurrElement.addEventListener("change",(evt) => {
         updateFlag(evt.target);
+        console.log(evt.target)
+        GetExchangeRate();
     })
     tocurrElement.addEventListener("change",(evt) => {
         updateFlag(evt.target);
+        GetExchangeRate();
     })
 
-let updateFlag = (element) =>{
+let updateFlag = (element) => {
     let currcode = element.value;
     let countryCode = countryList[currcode];
     let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`;
@@ -31,18 +34,16 @@ let updateFlag = (element) =>{
     img.src = newSrc;
 }
 
-btn.addEventListener("click",(evt) => {
+// btn.addEventListener("click",(evt) => {
+//     evt.preventDefault();
+//     GetExchangeRate();
+// })
+fromamount.addEventListener("change",()=>{
+    GetExchangeRate();
+})
+window.addEventListener("load",(evt)=>{
+    GetExchangeRate();
     evt.preventDefault();
-    GetExchangeRate();
-})
-fromcurrElement.addEventListener("change",() => {
-    toamount.value = " ";
-})
-tocurrElement.addEventListener("change",() => {
-    toamount.value = " ";
-})
-window.addEventListener("load",()=>{
-    GetExchangeRate();
 });
 
 const GetExchangeRate = async() =>{
